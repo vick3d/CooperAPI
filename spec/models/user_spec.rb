@@ -51,7 +51,13 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_db_column :updated_at }
 	end
 
+	describe 'Relations' do
+    it { is_expected.to have_many :performance_data }
+  end
+
+	describe 'Factory' do
 		it 'should have valid Factory' do
 			expect(create(:user)).to be_valid
 		end
+	end
 end
